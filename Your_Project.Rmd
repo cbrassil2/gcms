@@ -1,0 +1,26 @@
+---
+title: "Your Project"
+author: "Your Name"
+date: "2024-10-11"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r packages, include=FALSE}
+library(pacman)
+
+p_load(BiocManager,data.table,dplyr,shiny,shinyjs,rhandsontable,ggplot2,readr,DT,tidyr,xcms) #use p_load instead of library becuase it is robust to 
+```
+
+```{r gcms}
+source("https://thebustalab.github.io/phylochemistry/gcms.R")
+```
+
+```{r}
+analyzeGCMSdata("gc_data")
+```
+
