@@ -9,11 +9,20 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+The following chunk of code loads the required packages. However the xcms package is going to require a lot of computer memory. Unless we increase the memory in your virtual machine, attempting to load the package will crash the workspace. However, you can only do this with an upgraded account.
+
+**STEP 1** Click on the "gear" icon in the upper right menu.
+
+**STEP 2** Click on "Resources" which has a gauge icon.
+
+**STEP 3** Under RAM, Memory allocated, change the slider to 2 GB.
 
 ```{r packages, include=FALSE}
-library(pacman)
+library(pacman) #this package is used to manage the loading of the other packages
 
-p_load(BiocManager,data.table,dplyr,shiny,shinyjs,rhandsontable,ggplot2,readr,DT,tidyr,xcms) #use p_load instead of library becuase it is robust to 
+p_load(BiocManager,data.table,dplyr,shiny,shinyjs,rhandsontable,ggplot2,readr,DT,tidyr)
+
+p_load(xcms) #use p_load instead of library because it is robust to xcms being in Bioconductor. This is the line that will crash when using the free account in Posit Cloud.
 ```
 
 ```{r gcms}
