@@ -26,10 +26,10 @@ p_load(xcms) #use p_load instead of library because it is robust to xcms being i
 ```
 
 ```{r gcms}
-source("https://thebustalab.github.io/phylochemistry/gcms.R")
+source("https://thebustalab.github.io/phylochemistry/gcms.R") 
 ```
 
 ```{r}
-analyzeGCMSdata("gc_data")
+analyzeGCMSdata("gc_data") #This line can probably be simplied to "", but it need to be checked.
 ```
 
